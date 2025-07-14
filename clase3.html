@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;500;700&display=swap" rel="stylesheet">
+    <title>Document</title>
+    <style>
+
+/* Declaración de variables CSS en :root para colores y tamaños de fuente.
+   Esto permite reutilizar valores en todo el proyecto de forma centralizada. */
+   :root {
+      --white: #FFFFFF;
+      --black: #000000;
+      --very-light-pink: #C7C7C7;
+      --text-input-field: #F7F7F7;
+      --hospital-green: #ACD9B2;
+      --sm: 14px;
+      --md: 16px;
+      --lg: 18px;
+    }
+
+
+/* Elimina el margen predeterminado del navegador para que el diseño
+   tenga un control total desde el borde superior e izquierdo de la página */
+body{
+    margin:0;
+    font-family: 'Quicksand', sans-serif;
+    background-color: aquamarine;
+
+}
+
+/* Contenedor principal del login:
+   - Ocupa todo el ancho y alto de la pantalla.
+   - Usa grid para centrar el contenido tanto vertical como horizontalmente. */
+.login { 
+    width: 100%;
+    height: 100vh;
+    display: grid;
+    place-items:center;
+
+}
+
+/* Contenedor del formulario:
+   - Usa grid para distribuir sus elementos en 3 filas.
+   - La primera y última fila se ajustan automáticamente a su contenido.
+   - La fila del medio ocupa el espacio restante (1fr).
+   - Limita el ancho del formulario a 300px. */
+.form-container {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    width: 300px;
+}
+
+/* Estilo para el logo del formulario:
+   - Ancho fijo de 150px y separación inferior.
+   - Centrado horizontal usando justify-self (cuando está en grid).
+   - Oculto por defecto con display: none (puede mostrarse con media queries). */
+.logo{
+width: 150px;
+margin-bottom: 48px;
+justify-self: center;
+display: none;
+
+}
+
+/* Estilo del formulario:
+   - Usa Flexbox en dirección vertical para apilar elementos en columna. */
+.form {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Estilo para los enlaces dentro del formulario:
+   - Texto negro, tamaño pequeño, centrado y sin subrayado.
+   - Margen inferior amplio para separar visualmente del siguiente elemento. */
+.form a {
+    color: darkgrey;
+    font-size: var(--sm);
+    text-align: center;
+    text-decoration: none;
+    margin-bottom: 52px;
+    margin-top: 22px;
+    font-weight: bold;
+    
+}
+
+/* Estilo para las etiquetas de los campos del formulario:
+   - Fuente pequeña y en negrita para claridad.
+   - Espacio inferior para separarlas del input correspondiente. */
+.label{
+    font-size: var(--sm);
+    font-weight: bold;
+    margin-bottom: 4px;
+}
+
+/* Estilo base para los campos de entrada:
+   - Fondo gris claro definido por variable.
+   - Sin bordes visibles, con esquinas redondeadas.
+   - Tamaño de fuente medio, altura fija y padding interno.
+   - Margen inferior para separar visualmente otros elementos. */
+.input {
+      background-color: var(--text-input-field);
+      border: none;
+      border-radius: 8px;
+      height: 30px;
+      font-size: var(--md);
+      padding: 6px;
+      margin-bottom: 12px;
+    }
+
+/* Espaciado personalizado para el campo de email:
+   - Margen inferior más amplio para separar visualmente del siguiente elemento. */
+    .input-email {
+      margin-bottom: 22px;
+    }
+
+
+    /* Botón principal del formulario:
+   - Fondo negro con texto blanco (usando variables).
+   - Esquinas redondeadas y sin borde visible.
+   - Tamaño fijo, texto en negrita y cursor tipo botón.
+   - Ancho completo del contenedor. */
+     .primary-button {
+      background-color: black;
+      border-radius: 8px;
+      border: 2px solid white;
+      color: var(--white);
+      width: 100%;
+      cursor: pointer;
+      font-size: var(--md);
+      font-weight: bold;
+      height: 50px;
+    }
+
+    /* Estilo al pasar el cursor sobre el botón principal:
+   - Cambia el fondo a verde hospital (variable).
+   - Cambia el texto a negro para mejor contraste.
+   - Transición suave del color de fondo. */
+    .primary-button:hover {
+  background-color: whitesmoke;
+  color: black;
+  transition: background-color 0.3s ease;
+}
+
+ .secondary-button {
+      background-color: black;
+      border-radius: 8px;
+      border: 2px solid white;
+      color: white;
+      width: 100%;
+      cursor: pointer;
+      font-size: var(--md);
+      font-weight: bold;
+      height: 50px;
+      margin-top: -22px;
+    }
+
+    /* Estilo al pasar el cursor sobre el botón secundario:
+   - Cambia el fondo a blanco humo (whitesmoke).
+   - Cambia el texto a negro.
+   - Transición suave del color de fondo. */
+ .secondary-button:hover {
+  background-color: whitesmoke;
+  color: black;
+  transition: background-color 0.3s ease;
+}
+
+/* Espaciado vertical adicional para el botón de login:
+   - Separa el botón de los elementos superior e inferior. */
+login-button{
+    margin-top: 14px;
+    margin-bottom: 30px;
+}
+
+/* Responsive: muestra el logo como bloque en pantallas pequeñas (<= 640px). */
+@media (max-width: 640px){
+    .logo{
+        display: block;
+    }
+}
+
+
+@media (max-width: 500px){
+ .secondary-button{
+    margin-top: 30px;
+        
+    }
+}
+
+@media (max-width: 500px){
+ .form a{
+    margin-top: 10px;
+    
+    }
+}
+
+
+
+
+
+    </style>
+</head>
+<body>
+
+
+
+    <!-- Contenedor principal de la interfaz para crear una nueva contraseña.
+     Incluye: logo, título principal y un subtítulo con instrucciones -->
+<div class="login">
+    <div class="form-container">
+        <img src="./logos/logo-proyecto.svg" alt="logo" class="logo">
+
+
+<!-- Campo de formulario para ingresar la dirección de correo electrónico.
+     Incluye etiqueta asociada, placeholder y clases para estilos. -->
+ <form action="/" class="form">
+        <label for="email" class="label">Email Address</label>
+        <input type="text" id="email" placeholder="youremail@expample.com" class="input input-email">
+
+        <!-- Campo para ingresar la nueva contraseña del usuario.
+     Incluye etiqueta asociada, placeholder ocultando caracteres y clases para estilo. -->
+ <label for="password" class="label">Password</label>
+<input type="password" id="password" placeholder="*************" class="input input-password">
+
+
+<!-- Botón de envío del formulario para confirmar la nueva contraseña.
+     Usa clases para aplicar estilos primarios y de login. -->
+<input type="submit" value="Log in" class="primary-button login-button">
+
+<a href="/">Forgot my password</a>
+
+      </form>
+
+<!-- Botón para registrarse (sign up).
+     Usa clases para aplicar estilo secundario y estilo específico del registro. -->
+<button class="secondary-button signup-button">Sign up</button>
+
+
+    </div>
+  </div>
+</body>
+</html>

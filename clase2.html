@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;500;700&display=swap" rel="stylesheet">
+    <title>Document</title>
+    <style>
+
+/* Declaración de variables CSS en :root para colores y tamaños de fuente.
+   Esto permite reutilizar valores en todo el proyecto de forma centralizada. */
+   :root {
+      --white: #FFFFFF;
+      --black: #000000;
+      --very-light-pink: #C7C7C7;
+      --text-input-field: #F7F7F7;
+      --hospital-green: #ACD9B2;
+      --sm: 14px;
+      --md: 16px;
+      --lg: 18px;
+    }
+
+
+/* Elimina el margen predeterminado del navegador para que el diseño
+   tenga un control total desde el borde superior e izquierdo de la página */
+body{
+    margin:0;
+    font-family: 'Quicksand', sans-serif;
+    background-color: aquamarine;
+
+}
+
+/* Contenedor principal del login:
+   - Ocupa todo el ancho y alto de la pantalla.
+   - Usa grid para centrar el contenido tanto vertical como horizontalmente. */
+.login { 
+    width: 100%;
+    height: 100vh;
+    display: grid;
+    place-items:center;
+
+}
+
+/* Contenedor del formulario:
+   - Usa Grid con 3 filas: contenido arriba, área flexible en el centro y contenido abajo.
+   - Ancho fijo de 300px.
+   - Centra horizontalmente todos los elementos internos con justify-items. */
+.form-container {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    width: 300px;
+    justify-items: center;
+}
+
+/* Estilo para el logo:
+   - Define un ancho fijo de 150px.
+   - Agrega espacio debajo para separarlo del siguiente elemento.
+   - Centra el logo horizontalmente dentro del grid usando justify-self. */
+.logo{
+width: 150px;
+margin-bottom: 48px;
+justify-self: center;
+display: none;
+
+}
+
+/* Estilo para el título principal:
+   - Usa una variable CSS para el tamaño de fuente.
+   - Agrega espacio debajo con margin.
+   - Centra el texto horizontalmente. */
+    .title {
+      font-size: var(--lg);
+      margin-bottom: 12px;
+      text-align: center;
+    }
+
+
+    /* Estilo para el subtítulo debajo del título principal:
+   - Aplica un color gris claro desde la variable.
+   - Usa un tamaño de fuente mediano y peso ligero.
+   - Quita el margen superior, agrega espacio inferior y centra el texto. */
+    .subtitle {
+      color: var(--very-ligth-pink);
+      font-size: var(--md);
+      font-weight: 300;
+      margin-top: 0;
+      margin-bottom: 32px;
+      text-align: center;
+    }
+
+/* Contenedor circular para el ícono de correo:
+   - Tamaño fijo y forma redonda.
+   - Fondo claro desde variable.
+   - Centra el ícono con Flexbox.
+   - Agrega separación inferior para espacio visual. */
+.email-image{
+width: 132px;
+height: 132px;
+border-radius: 50%;
+background-color: var(--text-input-field);
+display: flex;
+justify-content: center;
+align-items: center;
+margin-bottom: 24px;
+}
+
+/* Tamaño del ícono dentro del contenedor circular de email:
+   - Limita el ancho a 80px para que se vea proporcionado. */
+.email-image img{
+    width: 80px;
+}
+
+/* Estilo para el mensaje de reenvío de correo:
+   - Texto pequeño definido por variable.
+   - El span y el enlace usan color negro.
+   - El enlace no tiene subrayado. */
+.resend{
+    font-size: var(--sm);
+
+}
+
+.resend span {
+    color: var(--black);
+}
+
+.resend a{
+    color: var(--black);
+    text-decoration: none;
+}
+
+
+
+
+    /* Botón principal del formulario:
+   - Fondo negro y texto blanco (usando variable).
+   - Bordes redondeados y sin borde visible.
+   - Ancho completo, altura fija, y texto en negrita.
+   - Muestra el cursor en forma de mano al pasar encima. */
+.primary-button {
+    background-color: black;
+    border-radius: 8px;
+    border: none;
+    color: var(--white);
+    width: 100%;
+    height: 30px;
+    cursor: pointer;
+    font-size: var(--md);
+    font-weight: bold;
+    height: 40px;
+}
+
+/* Espaciado vertical adicional para el botón de login:
+   - Separa el botón de los elementos superior e inferior. */
+login-button{
+    margin-top: 14px;
+    margin-bottom: 30px;
+}
+
+/* Responsive: muestra el logo como bloque en pantallas pequeñas (<= 640px). */
+@media (max-width: 640px){
+    .logo{
+        display: block;
+    }
+}
+
+
+
+    </style>
+</head>
+<body>
+
+
+
+<div class="login">
+    <div class="form-container">
+        <img src="./logos/logo-proyecto.svg" alt="logo" class="logo">
+
+        <!-- Mensaje de confirmación de envío de correo:
+     - Título y subtítulo informan al usuario que debe revisar su email.
+     - Imagen decorativa relacionada con el envío del correo. -->
+        <h1 class="title">Email has been sent!</h1>
+
+        <p class="subtitle">Please check your email for 
+            instructions on how to reset the password.</p>
+
+        <div class="email-image">
+            <img src="./icons/email-envelope-outline-shape-with-rounded-corners_icon-icons.com_56530.svg" alt="email">
+        </div>
+
+        <!-- Botón para volver al login y opción de reenviar el correo si no se recibió. -->
+        <button class="primary-button
+        login-button">Login</button>
+
+        <!-- Mensaje de ayuda para el usuario si no recibió el correo,
+     incluye un enlace para reenviar el email. -->
+        <p class="resend">
+        <span>
+        Didn't receive the email?
+        </span>
+        <a href="/">Resend</a>
+        </p>
+        
+    </div>
+  </div>
+</body>
+</html>
