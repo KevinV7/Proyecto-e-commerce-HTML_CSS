@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;500;700&display=swap" rel="stylesheet">
+    <title>Document</title>
+
+    <style>
+
+        :root {
+      --white: #FFFFFF;
+      --black: #000000;
+      --very-light-pink: #C7C7C7;
+      --text-input-field: #F7F7F7;
+      --hospital-green: #ACD9B2;
+      --sm: 14px;
+      --md: 16px;
+      --lg: 18px;
+    }
+
+body{
+    margin:0;
+    font-family: 'Quicksand', sans-serif;
+    background-color: aquamarine;
+
+}
+
+/* Menú desplegable para vista desktop:
+   - Ancho fijo con altura automática.
+   - Borde gris claro con esquinas redondeadas.
+   - Padding interno en 3 lados (superior, laterales).
+   - Fondo blanco definido con variable. */
+.desktop-menu {
+    width: 100px;
+    height: auto;
+    border: 1px solid var(--very-light-pink);
+    border-radius: 6px;
+    padding: 20px 20px 0 20px;
+    background-color: var(--white) ;
+   
+}
+
+/* Elimina los estilos por defecto del <ul> en el menú:
+   - Quita viñetas (list-style).
+   - Elimina padding y margen para control total del espaciado. */
+.desktop-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+
+/* Alinea a la derecha el contenido de cada ítem dentro del menú.
+   Útil para menús desplegables anclados a la parte derecha de la pantalla. */
+.desktop-menu ul li {
+ text-align: end;
+}
+
+
+/* Aplica negrita solo a los dos primeros ítems del menú:
+   útil para destacar opciones importantes como "My account" o "Orders". */
+.desktop-menu ul li:nth-child(1),
+.desktop-menu ul li:nth-child(2) {
+ font-weight: bold;
+}
+
+/* Estilo especial para el último ítem del menú (ej. "Log out"):
+   - Agrega espacio superior y una línea divisoria
+     para separarlo visualmente del resto de las opciones. */
+.desktop-menu ul li:last-child {
+ padding-top: 20px;
+ border-top: 1px solid var(--very-light-pink);  
+}
+
+/* Estilo específico para el enlace dentro del último ítem del menú:
+   - Texto negro y tamaño de fuente pequeño. 
+   - Útil para acciones como "Cerrar sesión". */
+.desktop-menu ul li:last-child a {
+color: black;
+font-size: var(--sm);
+}
+
+/* Estilo base para todos los enlaces dentro del menú:
+   - Texto negro sin subrayado.
+   - Separación inferior para crear espacio entre ítems.
+   - Display en línea con bloque para permitir margen vertical. */
+.desktop-menu ul li a {
+color: black;
+text-decoration: none;
+margin-bottom: 20px;
+display: inline-block;
+
+}
+
+
+
+
+
+
+
+
+    </style>
+</head>
+<body>
+    <!-- Menú de usuario en vista desktop:
+     - Incluye enlaces para ver órdenes, cuenta y cerrar sesión.
+     - Se estiliza como un dropdown limpio y funcional. -->
+    <div class="desktop-menu">
+<ul>
+    <li>
+        <a href="/">My Orders</a> 
+    </li>
+
+    <li>
+        <a href="/">My Account</a> 
+    </li>
+
+    <li>
+        <a href="/">Sign out</a> 
+    </li>
+
+</ul>
+        </div>
+</body>
+</html>

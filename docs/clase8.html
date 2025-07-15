@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;500;700&display=swap" rel="stylesheet">
+    <title>Document</title>
+    <style>
+    
+        :root {
+      --white: #FFFFFF;
+      --black: #000000;
+      --very-light-pink: #C7C7C7;
+      --text-input-field: #F7F7F7;
+      --hospital-green: #ACD9B2;
+      --sm: 14px;
+      --md: 16px;
+      --lg: 18px;
+    }
+
+        body {
+            margin: 0;
+            font-family: 'Quicksand', sans-serif;
+            background-color: var(--text-input-field);
+        }
+
+
+/* Menú para vista móvil:
+   - Aplica un padding general para dar espacio interno
+     y mejorar la legibilidad en pantallas pequeñas. */
+        .mobile-menu {
+   
+            padding: 24px;
+        }
+
+        /* Estructura de la lista en el menú móvil:
+   - Elimina viñetas, padding y márgenes por defecto.
+   - Agrega margen superior para separar la lista del encabezado u otros elementos. */
+        .mobile-menu ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 48px 0 0;
+        }
+
+        /* Agrega una línea divisoria al primer bloque de lista del menú móvil:
+   - Útil para separar secciones como navegación principal vs. opciones de cuenta. */
+          .mobile-menu ul:nth-child(1) 
+           {
+            border-bottom: 1px solid darkgrey;
+        }
+   
+   /* Espaciado vertical entre los elementos del menú móvil:
+   - Deja 48px de separación para facilitar la lectura y el toque en dispositivos móviles. */     
+        .mobile-menu ul li {
+            margin-bottom: 40px;
+        }
+
+        
+/* Estilo base para los enlaces del menú móvil:
+   - Elimina el subrayado.
+   - Usa color negro desde variable.
+   - Aplica texto en negrita para mayor visibilidad. */
+        .mobile-menu a {
+            text-decoration: none;
+            color: var(--black);
+            font-weight: bold;
+            /* margin-bottom: 24px; */
+            
+        }
+
+        /* Contenedor para información del usuario (nombre, email, etc.):
+   - Usa Flexbox en dirección vertical.
+   - Alinea los ítems a la izquierda.
+   - Aplica espacio superior y separación entre elementos con gap. */
+.user-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-top: 24px;
+  gap: 8px;
+}
+
+/* Estilo para el correo electrónico del usuario dentro de .user-info:
+   - Texto azul oscuro con peso medio.
+   - Tamaño pequeño definido por variable.
+   - Sin subrayado, con margen superior para separarlo del nombre u otros datos. */
+.user-info .email {
+  font-size: var(--sm);
+  color: darkblue;
+  font-weight: 500;
+  text-decoration: none;
+  margin-top: 24px;
+}
+
+/* Estilo para el enlace de cerrar sesión dentro de .user-info:
+   - Texto gris claro, sin subrayado.
+   - Tamaño pequeño para mostrar menor jerarquía visual. */
+.user-info .signout {
+  font-size: var(--sm);
+  color: darkgrey;
+  text-decoration: none;
+}
+
+.user-info .signout:hover {
+  color: var(--black);
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+
+        
+
+    </style>
+</head>
+<body>
+<div class="mobile-menu">
+
+    <ul>
+        <li> <a href="/">CATEGORIES</a>
+        </li>
+      
+
+         <li> <a href="/">All</a>
+        </li>
+
+          <li> <a href="/">Headphones</a>
+        </li>
+
+          <li> <a href="/">Laptops</a>
+        </li>
+
+          <li> <a href="/">Keyboards</a>
+        </li>
+
+          <li> <a href="/">Monitors</a>
+        </li>
+
+          <li> <a href="/">Webcams</a>
+        </li>
+
+    </ul>
+
+    <ul>
+
+            <li> <a href="/">My orders</a>
+        </li>
+
+        
+           <li> <a href="/">My account</a>
+        </li>
+
+    </ul>
+
+<div class="user-info">
+  <a href="/" class="email">email@example.com</a>
+  <a href="/" class="signout">Sign out</a>
+</div>
+
+    </div>
+</body>
+</html>

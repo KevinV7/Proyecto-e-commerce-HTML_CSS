@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;500;700&display=swap" rel="stylesheet">
+    <title>Document</title>
+
+    <style>
+
+               :root {
+      --white: #FFFFFF;
+      --black: #000000;
+      --very-light-pink: #C7C7C7;
+      --text-input-field: #F7F7F7;
+      --hospital-green: #ACD9B2;
+      --sm: 14px;
+      --md: 16px;
+      --lg: 18px;
+    }
+
+        body {
+            margin: 0;
+            font-family: 'Quicksand', sans-serif;
+            background-color: var(--text-input-field);
+        }
+
+        /* Contenedor principal de la vista "My Order":
+   - Ocupa todo el alto y ancho del viewport.
+   - Centra su contenido tanto vertical como horizontalmente usando Grid. */
+        .my-order{
+            width: 100%;
+            height: 100vh;
+            display: grid;      
+            place-items: center;
+        }
+
+        /* Título con tamaño grande y separación inferior */
+        .title {
+         font-size: var(--lg);
+         margin-bottom: 40px;
+        }
+
+        /* Contenedor con layout en filas: encabezado, contenido y pie; ancho fijo de 300px */
+        .my-order-container {
+            display: grid;
+            grid-template-rows: auto 1fr auto;
+            width: 300px;
+             /* height: 80vh; 
+             overflow-y: auto; */
+        }
+
+        .order{
+            display: grid;
+            grid-template-columns: auto 1fr auto;
+            gap:16px;
+            align-items: center;
+            margin-bottom: 12px;
+            background-color: lightgrey;
+            border-radius: 5px;
+            
+        }
+
+        /* Aplica una sombra sutil debajo del contenedor de pedido 
+   para dar profundidad visual al elemento */
+        .order {
+         box-shadow: 0 2px 8px black
+         }
+
+/* Selecciona el primer <p> dentro de .order y lo convierte en un contenedor flexible en columna,
+   útil si dentro hay elementos como texto y spans apilados verticalmente */
+        .order p:nth-child(1) {
+           display: flex;
+           flex-direction: column;
+        }
+
+        /* Estiliza el primer <span> dentro del <p> de un pedido: 
+   se le da tamaño medio y negrita para destacar contenido (como fecha o título) */
+        .order p span:nth-child(1) {
+         font-size: var(--md);
+         font-weight: bold;
+         
+        }
+
+        /* Estiliza el segundo <span> dentro del <p> de un pedido:
+   se le asigna un tamaño pequeño y color negro, ideal para información secundaria */
+          .order p span:nth-child(2) {
+          font-size: var(--sm);
+          color: var(--black);
+            
+        }
+
+        /* Aplica estilos al segundo <p> dentro de .order:
+   alinea el texto a la derecha y lo resalta en negrita,
+   útil para mostrar precios o totales */
+          .order p:nth-child(2) {
+      text-align: end;
+      font-weight: bold;
+    }
+
+    /* Contenedor principal del contenido de pedidos:
+   usa Flexbox en dirección vertical para apilar los elementos uno debajo del otro */
+        .my-order-content{
+            display:flex;
+            flex-direction: column;
+        }
+
+  
+
+
+    </style>
+</head>
+<body>
+
+
+
+<!-- Contenedor principal centrado vertical y horizontalmente en pantalla -->
+<div class="my-order">
+
+  <!-- Contenedor interno con estructura en filas para encabezado, contenido y pie -->
+  <div class="my-order-container">
+
+    <!-- Título de la sección de órdenes -->
+    <h1 class="title">My orders</h1>
+
+    <!-- Contenedor que organiza la lista de órdenes verticalmente -->
+    <div class="my-order-content">
+
+      <!-- Tarjeta de una orden específica con fecha, cantidad de artículos y precio -->
+      <div class="order">
+        <!-- Información de la orden: fecha y cantidad de artículos -->
+        <p>
+          <span>04.25.21</span>
+          <span>6 articles</span>
+        </p>
+        <!-- Total del pedido -->
+        <p>$560.00</p>
+        <img src="./icons/reshot-icon-arrow-chevron-right-WDGHUKQ634 ARROW.svg" alt="arrow" width="24" height="24">
+      </div>
+
+  <div class="order">
+        <!-- Información de la orden: fecha y cantidad de artículos -->
+        <p>
+          <span>04.25.21</span>
+          <span>6 articles</span>
+        </p>
+        <!-- Total del pedido -->
+        <p>$560.00</p>
+        <img src="./icons/reshot-icon-arrow-chevron-right-WDGHUKQ634 ARROW.svg" alt="arrow" width="24" height="24">
+      </div>
+
+
+        <div class="order">
+        <!-- Información de la orden: fecha y cantidad de artículos -->
+        <p>
+          <span>04.25.21</span>
+          <span>6 articles</span>
+        </p>
+        <!-- Total del pedido -->
+        <p>$560.00</p>
+        <img src="./icons/reshot-icon-arrow-chevron-right-WDGHUKQ634 ARROW.svg" alt="arrow" width="24" height="24">
+      </div>
+
+
+        <div class="order">
+        <!-- Información de la orden: fecha y cantidad de artículos -->
+        <p>
+          <span>04.25.21</span>
+          <span>6 articles</span>
+        </p>
+        <!-- Total del pedido -->
+        <p>$560.00</p>
+        <img src="./icons/reshot-icon-arrow-chevron-right-WDGHUKQ634 ARROW.svg" alt="arrow" width="24" height="24">
+      </div>
+
+
+        <div class="order">
+        <!-- Información de la orden: fecha y cantidad de artículos -->
+        <p>
+          <span>04.25.21</span>
+          <span>6 articles</span>
+        </p>
+        <!-- Total del pedido -->
+        <p>$560.00</p>
+        <img src="./icons/reshot-icon-arrow-chevron-right-WDGHUKQ634 ARROW.svg" alt="arrow" width="24" height="24">
+      </div>
+
+      </div>
+    </div>
+  </div>
+</body>
+</html>

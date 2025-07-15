@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;500;700&display=swap" rel="stylesheet">
+  <title>Índice de Clases</title>
+  <style>
+    :root {
+      --bg: aquamarine;
+      --fg: #000;
+      --hover-bg: #fff;
+      --font: 'Quicksand', sans-serif;
+      --md: 16px;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: var(--font);
+      background-color: var(--bg);
+      color: var(--fg);
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+    header {
+      padding: 16px;
+      text-align: center;
+    }
+    .logo {
+      height: 130px;
+    }
+    main {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 32px;
+    }
+    .class-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      width: 100%;
+      max-width: 360px;
+    }
+    .class-list li + li {
+      margin-top: 8px;
+    }
+    .class-list a {
+      display: block;
+      text-decoration: none;
+      background-color: var(--hover-bg);
+      color: var(--fg);
+      padding: 12px 16px;
+      border-radius: 4px;
+      font-size: var(--md);
+      font-weight: 500;
+      transition: background-color 0.2s;
+    }
+    .class-list a:hover {
+      background-color: var(--fg);
+      color: var(--hover-bg);
+    }
+    footer {
+      padding: 16px;
+      text-align: center;
+      font-size: 14px;
+      background-color: var(--hover-bg);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="./logos/logo-proyecto.svg" alt="Logo" class="logo">
+  </header>
+  <main>
+    <ul class="class-list">
+      <li><a href="clase1.html">Clase 1: Crear nueva contraseña</a></li>
+      <li><a href="clase2.html">Clase 2: Email enviado</a></li>
+      <li><a href="clase3.html">Clase 3: Formulario con enlaces</a></li>
+      <li><a href="clase4.html">Clase 4: Registro de usuario</a></li>
+      <li><a href="clase5.html">Clase 5: Resumen de cuenta</a></li>
+      <li><a href="clase6.html">Clase 6: Tarjetas de productos</a></li>
+      <li><a href="clase7.html">Clase 7: Menú de escritorio</a></li>
+      <li><a href="clase8.html">Clase 8: Menú móvil</a></li>
+      <li><a href="clase9.html">Clase 9: Detalle de orden</a></li>
+      <li><a href="clase10.html">Clase 10: Lista de órdenes</a></li>
+      <li><a href="clase11.html">Clase 11: Navegación (Navbar)</a></li>
+      <li><a href="clase12.html">Clase 12: Detalle de producto</a></li>
+      <li><a href="clase13.html">Clase 13: Carrito de compras</a></li>
+    </ul>
+  </main>
+  <footer>
+    &copy; 2025 Mi Proyecto 
+  </footer>
+</body>
+</html>
