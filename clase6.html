@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;500;700&display=swap" rel="stylesheet">
+    <title>Document</title>
+    <style>
+
+        :root {
+            --white: #FFFFFF;
+            --black: #000000;
+            --very-light-pink: #C7C7C7;
+            --text-input-field: #F7F7F7;
+            --hospital-green: #ACD9B2;
+            --sm: 14px;
+            --md: 16px;
+            --lg: 18px;
+        }
+
+
+        body {
+            margin: 0;
+            font-family: 'Quicksand', sans-serif;
+            background-color: var(--text-input-field);
+
+        }
+         
+        /* 
+  Contenedor principal de las tarjetas de producto.
+  - Se utiliza display: grid para organizar los elementos en un layout de rejilla.
+  - grid-template-columns: crea tantas columnas de 240px como quepan horizontalmente (auto-fill).
+  - gap: define un espacio de 24px entre cada tarjeta, tanto en filas como columnas.
+  - place-content: center centra todo el grid horizontal y verticalmente en el contenedor.
+*/
+        .cards-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, 240px);
+            gap:24px;
+            place-content: center;
+           
+        }
+
+
+        /* 
+  Tarjeta individual de producto.
+  - Define un ancho fijo de 240px para mantener consistencia visual con el grid.
+*/
+         .product-card  {
+          width: 240px;
+
+        }
+
+/* 
+  Imagen del producto dentro de la tarjeta.
+  - width y height de 240px para asegurar que la imagen encaje en la tarjeta.
+  - border-radius de 20px para dar esquinas redondeadas y un look más amigable.
+  - object-fit: cover asegura que la imagen mantenga proporción y se recorte si es necesario
+    para llenar completamente el contenedor sin deformarse.
+*/
+        .product-card img {
+            width: 240px;
+            height: 240px;
+            border-radius:  20px;
+            object-fit: cover;
+
+        }
+
+/* 
+  Contenedor de información del producto (precio, nombre e ícono).
+  - display: flex permite organizar los elementos hijos en una sola línea.
+  - justify-content: space-between separa el texto y el ícono a extremos opuestos del contenedor.
+  - align-items: center alinea verticalmente los elementos al centro del eje horizontal.
+*/
+        .product-info {
+         display: flex;
+         justify-content: space-between;
+         align-items: center;
+        }
+
+        /* 
+  Estilo para el contenedor <figure> del ícono (botón de agregar al carrito).
+  - Elimina el margen por defecto que aplica el navegador al elemento <figure>
+    para mantener una alineación limpia dentro del contenedor flex.
+*/
+         .product-info figure {
+          margin: 0;
+        }
+
+
+        /* 
+  Estilo para el ícono dentro del <figure> (botón de agregar al carrito).
+  - Se define un tamaño fijo de 35px por 35px para mantener proporción y consistencia visual.
+*/
+        .product-info figure img{
+            width: 35px;
+            height: 35px;
+        }
+
+        /* 
+  Primer párrafo dentro del contenedor de información del producto (precio).
+  - font-weight: bold resalta el precio como elemento principal.
+  - font-size usa una variable CSS (--md) para mantener consistencia tipográfica.
+  - margin-top: 0 elimina el espacio superior innecesario.
+  - margin-bottom: 4px crea separación con el siguiente párrafo (nombre del producto).
+*/
+         .product-info div p:nth-child(1) {
+            font-weight: bold;
+            font-size: var(--md);
+            margin-top: 0px;
+            margin-bottom: 4px;
+         }
+
+
+         /* 
+  Segundo párrafo dentro del contenedor de información del producto (nombre del producto).
+  - font-size usa la variable CSS (--sm) para un tamaño más discreto que el precio.
+  - margin-top y margin-bottom en 0 eliminan espacios innecesarios para un diseño compacto.
+  - color: darkgray para darle un tono visual más tenue y secundario frente al precio.
+*/
+           .product-info div p:nth-child(2) {
+    
+            font-size: var(--sm);
+            margin-top: 0px;
+            margin-bottom: 0px;
+            color: darkgray
+         }
+
+         /* 
+  Estilos responsivos para pantallas pequeñas (máximo 640px de ancho).
+  - Se ajusta el diseño de la rejilla para mostrar tarjetas más pequeñas y mantener la legibilidad en móviles.
+
+  .cards-container:
+    - Reduce el ancho de columna a 140px para que entren más tarjetas en pantallas estrechas.
+
+  .product-card:
+    - Reduce el ancho de cada tarjeta individual a 140px para coincidir con el nuevo grid.
+
+  .product-card img:
+    - Reduce el tamaño de la imagen a 140px x 140px para que se ajuste correctamente a la tarjeta más pequeña.
+*/
+        @media(max-width: 640px){
+            .cards-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, 140px);
+           
+        }
+
+        .product-card  {
+          width: 140px;
+
+        }
+
+
+        .product-card img {
+            width: 140px;
+            height: 140px;
+   
+
+        }
+        }
+        
+
+    </style>
+</head>
+
+<body>
+
+    <section class="main_conatiner">
+
+        <div class="cards-container">
+
+<!-- Tarjeta de producto:
+     - Imagen principal del producto.
+     - Contenedor con precio y nombre del producto.
+     - Ícono para agregar el producto al carrito. -->
+            <div class="product-card">
+                <img src="https://images.pexels.com/photos/1029757/pexels-photo-1029757.jpeg" alt="Monitor">
+                <div class="product-info">
+                    <div>
+                    <p>$120,00</p>
+                    <p>Monitor</p>
+                    </div>
+                <figure>
+                    <img src="./icons/add_circle_create_expand_new_plus_icon_123218.svg" alt="">
+                </figure>
+                </div>
+            </div>
+
+
+     <div class="product-card">
+                <img src="https://th.bing.com/th/id/R.142077dd35ea3ffdde7a96e38da9ecfc?rik=L6P9hbw93jno7w&riu=http%3a%2f%2fwww.bhphotovideo.com%2fimages%2fimages2500x2500%2fbeats_by_dr_dre_900_00183_01_studio_wireless_over_ear_headphone_1037578.jpg&ehk=Gvcvd4F3e5KImn%2bDtTXuzfLaCL5syVO0QX596b8x35M%3d&risl=&pid=ImgRaw&r=0" alt="Headphones">
+                <div class="product-info">
+                    <div>
+                    <p>$150,00</p>
+                    <p>Headphones</p>
+                    </div>
+                <figure>
+                    <img src="./icons/add_circle_create_expand_new_plus_icon_123218.svg" alt="">
+                </figure>
+                </div>
+            </div>
+
+
+
+                 <div class="product-card">
+                <img src="https://down-br.img.susercontent.com/file/br-11134207-7qukw-li1udjvgrllp7e" alt="Monitor">
+                <div class="product-info">
+                    <div>
+                    <p>$70,00</p>
+                    <p>Mouse</p>
+                    </div>
+                <figure>
+                    <img src="./icons/add_circle_create_expand_new_plus_icon_123218.svg" alt="">
+                </figure>
+                </div>
+            </div>
+
+
+
+                 <div class="product-card">
+                <img src="https://th.bing.com/th/id/R.aca39d074a371970b320d4321b852196?rik=FvyzBd81DP%2bvjQ&pid=ImgRaw&r=0" alt="Monitor">
+                <div class="product-info">
+                    <div>
+                    <p>$100,00</p>
+                    <p>Mouse gamer</p>
+                    </div>
+                <figure>
+                    <img src="./icons/add_circle_create_expand_new_plus_icon_123218.svg" alt="">
+                </figure>
+                </div>
+            </div>
+
+
+
+                 <div class="product-card">
+                <img src="https://i0.wp.com/bgamer.pro/wp-content/uploads/2019/02/indrah3.jpg?fit=800%2C800&ssl=1" alt="Monitor">
+                <div class="product-info">
+                    <div>
+                    <p>$110,00</p>
+                    <p>Keyboard</p>
+                    </div>
+                <figure>
+                    <img src="./icons/add_circle_create_expand_new_plus_icon_123218.svg" alt="">
+                </figure>
+                </div>
+            </div>
+
+                 <div class="product-card">
+                <img src="https://images.pexels.com/photos/1029757/pexels-photo-1029757.jpeg" alt="Monitor">
+                <div class="product-info">
+                    <div>
+                    <p>$120,00</p>
+                    <p>Monitor</p>
+                    </div>
+                <figure>
+                    <img src="./icons/add_circle_create_expand_new_plus_icon_123218.svg" alt="">
+                </figure>
+                </div>
+            </div>
+
+
+                     <div class="product-card">
+                <img src="https://images.pexels.com/photos/1029757/pexels-photo-1029757.jpeg" alt="Monitor">
+                <div class="product-info">
+                    <div>
+                    <p>$120,00</p>
+                    <p>Monitor</p>
+                    </div>
+                <figure>
+                    <img src="./icons/add_circle_create_expand_new_plus_icon_123218.svg" alt="">
+                </figure>
+                </div>
+            </div>
+
+
+
+                     <div class="product-card">
+                <img src="https://images.pexels.com/photos/1029757/pexels-photo-1029757.jpeg" alt="Monitor">
+                <div class="product-info">
+                    <div>
+                    <p>$120,00</p>
+                    <p>Monitor</p>
+                    </div>
+                <figure>
+                    <img src="./icons/add_circle_create_expand_new_plus_icon_123218.svg" alt="">
+                </figure>
+                </div>
+            </div>
+
+
+                     <div class="product-card">
+                <img src="https://images.pexels.com/photos/1029757/pexels-photo-1029757.jpeg" alt="Monitor">
+                <div class="product-info">
+                    <div>
+                    <p>$120,00</p>
+                    <p>Monitor</p>
+                    </div>
+                <figure>
+                    <img src="./icons/add_circle_create_expand_new_plus_icon_123218.svg" alt="">
+                </figure>
+                </div>
+            </div>
+
+        </div>
+    </section>
+</body>
+
+</html>
